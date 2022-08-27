@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/register.css">
+    <link rel="stylesheet" href="../../styles/general.css">
+    <title>Register</title>
+</head>
+<body class="main__body">
+    <main class="main__register">
+        <h1>Formulario de registro</h1>
+        <form action="register" method="POST">
+            <div class="div-form">
+                <label for="nombre">Ingrese su nombre</label>
+                <input id="nombre" name="nombre" type="text" value="<%= locals.old && old.nombre ? old.nombre : null %>">
+                <span class="errores"><%= locals.errors && errors.nombre ? errors.nombre.msg : null %></span>
+            </div>
+    
+            <div class="div-form">
+                <label for="color">Seleccioná un color</label>
+                <select name="color" id="color" >
+                    <option  value="" hidden selected>...</option>
+                    <option <%= locals.old && old.color == '#ff0000' ? 'selected' : null %> value="#ff0000">rojo</option>
+                    <option <%= locals.old && old.color == '#00ff00' ? 'selected' : null %> value="#00ff00">verde</option>
+                    <option <%= locals.old && old.color == '#0000ff' ? 'selected' : null %> value="#0000ff">azul</option>
+                    <option <%= locals.old && old.color == '#770077' ? 'selected' : null %> value="#770077">morado</option>
+                </select>
+                <span class="errores"><%= locals.errors && errors.color ? errors.color.msg : null %></span>
+            </div>
+    
+            <div class="div-form">
+                <label for="email">Ingrese su email</label>
+                <input id="email" name="email" type="email" value="<%= locals.old && old.email ? old.email : null %>">
+                <span class="errores"><%= locals.errors && errors.email ? errors.email.msg : null %></span>
+            </div>
+            
+            <div class="div-form">
+                <label for="edad">Ingrese su edad</label>
+                <input id="edad" name="edad" type="number" value="<%= locals.old && old.edad ? old.edad : null %>">
+                <span class="errores"><%= locals.errors && errors.edad ? errors.edad.msg : null %></span>
+            </div>
+    
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+</body>
+</html>

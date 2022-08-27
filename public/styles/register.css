@@ -1,0 +1,74 @@
+.main__body{
+    background-color: gainsboro;
+}
+
+.main__register{
+    width: 100%;
+    margin: 20px 0;
+}
+
+h1{
+    font-family: sans-serif;
+    text-align: center;
+    background-color: white;
+    width: 30%;
+    margin: 20px auto;
+    border-left: 6px solid #6195e38a;
+    border-radius: 0px 5px 5px 0px;
+}
+
+form{
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    box-shadow: 7px 11px 25px -9px rgba(0,0,0,1);
+    border-radius: 5px;
+}
+
+.div-form{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+.div-form select{
+    border: none;
+    background-color: #f1eded;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.div-form select option{
+    background-color: white;
+   
+}
+
+.div-form input{
+    border: none;
+    background-color: #f1eded;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.div-form label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button{
+    width: 80px;
+    margin: 0 auto;
+    border: none;
+    background-color: #cacaca;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.errores{
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(207, 57, 57);
+}
