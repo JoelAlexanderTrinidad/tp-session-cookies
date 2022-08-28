@@ -73,3 +73,12 @@ button{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(207, 57, 57);
 }
+
+.mensaje{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.main-fondo{
+    background-color: red;
+}
