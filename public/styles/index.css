@@ -79,6 +79,27 @@ button{
 
 }
 
-.main-fondo{
-    background-color: red;
+.rojo{
+    background-color: #ff0000;
+}
+
+.verde{
+    background-color: #00ff00;
+}
+
+.azul{
+    background-color: #0000ff;
+}
+
+.morado{
+    background-color: #770077;
+}
+
+.boton-entrar{
+    text-decoration: none;
+    color: black;
+}
+
+.boton-entrar:visited{
+    color: black;
 }

@@ -29,6 +29,9 @@ const controller = {
                 old: req.body
             })
         }
+    },
+    bienvenida: (req, res) => {
+        return res.render('bienvenida')
     }
 }
 

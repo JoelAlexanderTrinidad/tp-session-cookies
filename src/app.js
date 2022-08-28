@@ -13,4 +13,4 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRoutes);
 
 
-app.listen(3000, () => console.log('servidor corriendo en el puerto 3000'));
+app.listen(3000, () => console.log(`Servidor corriendo en http://localhost:3000`));
