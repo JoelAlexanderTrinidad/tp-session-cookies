@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/general.css">
     <title>Document</title>
 </head>
-<body>
+<body class="<%= !locals.errors && locals.old && old.color == '#ff0000' ? 'rojo' : locals.old && old.color == '#00ff00' ? 'verde' :  locals.old && old.color == '#0000ff' ? 'azul' : locals.old && old.color == '#770077' ? 'morado' : null%>" >
+    <div class="tarjetita">
+        <div class="div-form">
+            <span class="mensaje">Hola <%= locals.old && old.nombre ? old.nombre : null%>!</span>
+        </div>
     
+        <div class="div-form">
+            <span class="mensaje">Elegiste el color:
+                <% if ( locals.old && old.color === '#ff0000') { %>
+                    rojo
+                <% } else if (locals.old && old.color === '#00ff00') { %>
+                    verde
+                <% } else if (locals.old && old.color === '#0000ff') { %>
+                    azul
+                <% } else { %>
+                    morado
+                <% } %>
+                 
+            </span>
+        </div>
+    
+        <div class="div-form">
+            <span class="mensaje">Tu mail es: <%= locals.old && old.email ? old.email : null %></span>
+        </div>
+        
+        <div class="div-form">
+            <span class="mensaje">Tu edad es: <%= locals.old && old.edad ? old.edad : null %></span>
+        </div>
+
+        <% if (!locals.errors && locals.body == true) { %>
+            <a class="boton-enviar boton-gracias" href="/gracias">gracias!</a>
+        <% } %>
+    </div>
+
 </body>
 </html>

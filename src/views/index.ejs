@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="../../styles/general.css">
     <title>tp</title>
 </head>
-<body class="">
+<body class="<%= !locals.errors && locals.old && old.color == '#ff0000' ? 'rojo' : locals.old && old.color == '#00ff00' ? 'verde' :  locals.old && old.color == '#0000ff' ? 'azul' : locals.old && old.color == '#770077' ? 'morado' : null%>">
     <main class="main__register">
-        <h1>Bienvenid@</h1>
         <form action="" method="POST">
-            <% if (locals.errors) { %>
+           
                 <div class="div-form">
                     <label for="nombre">Ingrese su nombre</label>
                     <input id="nombre" name="nombre" type="text" value="<%= locals.old && old.nombre ? old.nombre : null %>">
@@ -43,40 +42,13 @@
                     <span class="errores"><%= locals.errors && errors.edad ? errors.edad.msg : null %></span>
                 </div>
     
-                <button type="submit">Enviar</button>
+                <button class="boton-enviar" type="submit">Enviar</button>
 
-                <% } else { %>
-                    <div class="div-form">
-                        <span class="mensaje">Hola <%= old.nombre %>!</span>
-                    </div>
-            
-                    <div class="div-form">
-                        <span class="mensaje">Elegiste el color:
-                            <% if (old.color === '#ff0000') { %>
-                                rojo
-                            <% } else if (old.color === '#00ff00') { %>
-                                verde
-                            <% } else if (old.color === '#0000ff') { %>
-                                azul
-                            <% } else { %>
-                                morado
-                            <% } %>
-                             
-                        </span>
-                    </div>
-            
-                    <div class="div-form">
-                        <span class="mensaje">Tu mail es: <%= old.email %></span>
-                    </div>
-                    
-                    <div class="div-form">
-                        <span class="mensaje">Tu edad es: <%= old.edad %></span>
-                    </div>
-
-                    <button type="submit"><a  class="boton-entrar" href="/bienvenida">Entrar</a></button>
-                    
+                <% if (!locals.errors && locals.body == true) { %>
+                    <a class="boton-enviar boton-gracias" href="/bienvenida">Dar gracias</a>
                 <% } %>
-        </form>
+                
+            </form>
     </main>
 </body>
 </html>

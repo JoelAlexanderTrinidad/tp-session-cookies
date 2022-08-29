@@ -9,10 +9,9 @@ const controller = {
     },
     indexPost: (req, res) => {
         const errors = validationResult(req);
-        // return res.send(req.body)
-
         if(errors.isEmpty()){
-            /* let nuevoUsuario = {
+            let body = true
+           /*  let nuevoUsuario = {
                 nombre: req.body.nombre,
                 color: req.body.color,
                 email: req.body.email,
@@ -20,18 +19,41 @@ const controller = {
             }
             usuarios.push(nuevoUsuario);
             fs.writeFileSync(path.resolve(__dirname, '..', 'data', 'usersDatabase.json'),JSON.stringify(usuarios, null, 3), 'utf-8'); */
-            return res.render('index',{
-                old: req.body
+
+            req.session.userLogin = {
+                nombre: req.body.nombre,
+                color: req.body.color,
+                email: req.body.email,
+                edad: req.body.edad
+            }
+
+           
+
+            return res.render('bienvenida',{
+                old: req.body,
+                body
             })
         }else{
+            let body = false
             return res.render('index',{
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                body
             })
         }
     },
     bienvenida: (req, res) => {
-        return res.render('bienvenida')
+        const session = req.session.userLogin
+
+        return res.render('bienvenida',{
+            session
+        })
+    },
+    gracias: (req, res) => {
+        const session = req.session.userLogin
+        return res.render('gracias',{
+            session
+        });
     }
 }
 

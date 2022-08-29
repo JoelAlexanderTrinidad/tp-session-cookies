@@ -8,6 +8,7 @@ const validations = require('../validations/usersValidations');
 // index
 router.get('/', indexController.index);
 router.get('/bienvenida', indexController.bienvenida);
+router.get('/gracias', indexController.gracias)
 
 // process register
 router.post('/', validations, indexController.indexPost);
