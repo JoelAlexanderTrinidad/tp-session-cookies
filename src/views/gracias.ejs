@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="../../styles/general.css">
     <title>Document</title>
 </head>
-<body class="<%= !locals.errors && locals.old && old.color == '#ff0000' ? 'rojo' : locals.old && old.color == '#00ff00' ? 'verde' :  locals.old && old.color == '#0000ff' ? 'azul' : locals.old && old.color == '#770077' ? 'morado' : null%>" >
+<body class="<%= locals.session && session.color == '#ff0000' ? 'rojo' : locals.session && session.color == '#00ff00' ? 'verde' :  locals.session && session.color == '#0000ff' ? 'azul' : locals.session && session.color == '#770077' ? 'morado' : null%>" >
     <div class="tarjetita">
         <div class="div-form">
             <span class="mensaje"><%= locals.session && session.nombre ? session.nombre : null%> gracias por visitarnos</span>
         </div>
     
-        <a class="" href="/">Volver al inicio</a>
+        <a class="boton-enviar boton-gracias" href="/">Volver al inicio</a>
     </div>
 
 </body>

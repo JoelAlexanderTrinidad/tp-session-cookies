@@ -27,8 +27,14 @@ const controller = {
                 edad: req.body.edad
             }
 
-           
+            if(req.body.recordame){
+                res.cookie('usuario', req.session.userLogin, {maxAge : 1000*60*2})
+            }
 
+           /*  let color = req.cookies.color;
+
+           console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',color);
+ */
             return res.render('bienvenida',{
                 old: req.body,
                 body

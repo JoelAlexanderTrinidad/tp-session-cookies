@@ -42,7 +42,11 @@
                     <span class="errores"><%= locals.errors && errors.edad ? errors.edad.msg : null %></span>
                 </div>
     
-                <button class="boton-enviar" type="submit">Enviar</button>
+                <button class="boton-enviar" type="submit">  Enviar</button>
+                <div>
+                    <label for="recordame">Recordame</label>
+                    <input class="" type="checkbox" name="recordame" id="recordame">
+                </div>
 
                 <% if (!locals.errors && locals.body == true) { %>
                     <a class="boton-enviar boton-gracias" href="/bienvenida">Dar gracias</a>
